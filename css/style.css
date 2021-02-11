@@ -29,6 +29,13 @@ button {
 button:hover {
     cursor: pointer;
 }
+button:focus {outline:none !important}
+
+button:active {
+    background: linear-gradient(145deg, #7ab0d1, #90d1f8);
+    box-shadow:  20px 20px 60px #73a6c5, 
+             -20px -20px 60px #9be0ff;
+}
 .buttons {
     font-size: 20px;
     text-align: center;

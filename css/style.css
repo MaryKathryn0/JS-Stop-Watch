@@ -1,16 +1,43 @@
 body {
-    background-color: rgb(157, 192, 223);
+    background-color: #87c3e8;
     text-align: center;
-    margin-top: 200px;
+    margin-top: 170px;
 }
 
+.container {
+    margin:auto;
+    height:400px;
+    width:400px;
+    border-radius: 200px;
+    background: #87c3e8;
+    box-shadow:  20px 20px 60px #73a6c5, 
+             -20px -20px 60px #9be0ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 #timer {
     font-family: 'Spartan', sans-serif;
-    font-size: 65px;
+    font-size: 50px;
 }
 
 button {
-    width: 50px;
-    height: 20px;
+    width: 100px;
+    height: 25px;
     font-family: 'Spartan', sans-serif;
+}
+button:hover {
+    cursor: pointer;
+}
+.buttons {
+    font-size: 20px;
+    text-align: center;
+    padding: 11px;
+    height:80px;
+    width:80px;
+    border-radius: 50%;
+    border-color: transparent;
+    background: #87c3e8;
+    box-shadow:  20px 20px 60px #73a6c5, 
+             -20px -20px 60px #9be0ff;
 }

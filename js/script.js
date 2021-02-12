@@ -23,9 +23,22 @@ function Stopwatch() {
     this.isOn= false;
 
     //first added start function- this functions
-    this.start= function() {};
-    // then will need to add stop, reset, 
-    this.stop= function() {};
+    this.start= function() {
+        if (!this.isOn) {
+            interval = setInterval(update,10);
+            offset = Date.now();
+            this.isOn = true;
+        }
+    };
+    // Also add stop and reset private functions, 
+    // 
+    this.stop= function() {
+        if (this.isOn) {
+            clearInterval(interval);
+            interval = null;
+            this.isOn = false;
+        }
+    };
     this.reset= function() {};
 }
 // thru new operator using 'new' Keyword- anything that happens to 'this' above

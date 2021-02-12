@@ -19,7 +19,7 @@ function Stopwatch() {
         //whatever is add to delta will be added to the time
         time += delta();
         var formattedTime = timeFormatter(time);
-        console.log (formattedTime);
+        
     }
 
     //delta is to calculate how much time has passed

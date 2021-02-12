@@ -2,6 +2,7 @@
 // Constructor Function():is a function we use to create an OBJECT
 // Stopwatch() : this is the function we will be working with
 function Stopwatch() {
+    
     // Create Private Variables:
     // The time is the current time in milliseconds(will format later)
     var time = 0;
@@ -11,6 +12,7 @@ function Stopwatch() {
     // offset variable: going to set this variable to date.now to calculate how much time has passed
     var offset;
 
+
     //Now add private functions
     //Update is what the interval will constantly keep going
     function update() {
@@ -19,10 +21,11 @@ function Stopwatch() {
         var formattedTime = timeFormatter(time);
         console.log (formattedTime);
     }
+
     //delta is to calculate how much time has passed
     function delta() {
         // get date right now
-        var now = Date.now;
+        var now = Date.now();
         //get time passed by subtracting offset from now(we get from below this.start function) 
         var timePassed = now - offset;
         // added this so that the next time the function is run it starts at correct spot
@@ -30,6 +33,7 @@ function Stopwatch() {
         // Difference is returned as timePassed variable
         return timePassed;
     }
+
     //timeFor is to convert from milliseconds
     function timeFormatter(timeInMilliseconds) {
         // created date object to pass in that value and add '.toString();' to get length to each
@@ -54,10 +58,14 @@ function Stopwatch() {
     }
  
 
+
+    //Add a value set to false; will be if stopwatch isnt currently running
+    this.isOn= false;
+
     //first added start function- this functions
     this.start= function() {
         if (!this.isOn) {
-            interval = setInterval(update,10);
+            interval = setInterval(update, 10);
             offset = Date.now();
             this.isOn = true;
         }

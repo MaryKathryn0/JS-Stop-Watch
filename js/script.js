@@ -13,9 +13,21 @@ function Stopwatch() {
 
     //Now add private functions
     //Update is what the interval will constantly keep going
-    function update() {}
+    function update() {
+        //
+        time += delta();
+    }
     //delta is to calculate how much time has passed
-    function delta() {}
+    function delta() {
+        //
+        var now = Date.now;
+        //
+        var timePassed = offset-now;
+        //
+        offset = now;
+        //
+        return timePassed;
+    }
     //timeFor is to convert from milliseconds
     function timeFormatter() {}
 

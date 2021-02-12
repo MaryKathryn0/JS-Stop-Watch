@@ -16,13 +16,14 @@ function Stopwatch() {
     function update() {
         //whatever is add to delta will be added to the time
         time += delta();
+        console.log (time);
     }
     //delta is to calculate how much time has passed
     function delta() {
         // get date right now
         var now = Date.now;
-        //get time passed by subtracting now from offset(we get from below this.start function) 
-        var timePassed = offset-now;
+        //get time passed by subtracting offset from now(we get from below this.start function) 
+        var timePassed = now - offset;
         // added this so that the next time the function is run it starts at correct spot
         offset = now;
         // Difference is returned as timePassed variable
@@ -55,8 +56,10 @@ function Stopwatch() {
         time = 0; 
     };
 }
-// thru new operator using 'new' Keyword- anything that happens to 'this' above
+
 var watch = new Stopwatch();
-watch.start();
+// thru new operator using 'new' Keyword- anything that happens to 'this' above
+// var watch = new Stopwatch();
+//  watch.start();
 
 

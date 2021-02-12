@@ -16,7 +16,8 @@ function Stopwatch() {
     function update() {
         //whatever is add to delta will be added to the time
         time += delta();
-        console.log (time);
+        var formattedTime = timeFormatter(time);
+        console.log (formattedTime);
     }
     //delta is to calculate how much time has passed
     function delta() {
@@ -30,8 +31,27 @@ function Stopwatch() {
         return timePassed;
     }
     //timeFor is to convert from milliseconds
-    function timeFormatter() {}
-
+    function timeFormatter(timeInMilliseconds) {
+        // created date object to pass in that value and add '.toString();' to get length to each
+        time = new Date(time);
+        var minutes = time.getMinutes().toString();
+        var seconds = time.getSeconds().toString();
+        var milliseconds = time.getMilliseconds().toString();
+         // to ensure number of characters matches formatting
+        if (minutes.length < 2 ) {
+            minutes = '0' + minutes;
+        }
+         // to ensure number of characters matches formatting
+        if (seconds.length < 2 ) {
+            seconds = '0' + seconds;
+        }
+        // to ensure number of characters matches formatting
+        while (milliseconds.length < 3 ) {
+            milliseconds = '0' + milliseconds;
+        }
+        //return the formatting to match display
+        return minutes + ' : ' + seconds + ' . ' + milliseconds;
+    }
     //Add a value set to false; will be if stopwatch isnt currently running
     this.isOn= false;
 

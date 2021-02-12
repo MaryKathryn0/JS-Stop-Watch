@@ -1,6 +1,7 @@
 body {
     background-image: url(clouds-moving.gif);
-    /* background-color: #87c3e8; */
+    background-color: #87c3e8;
+    /* opacity: 50%; */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;

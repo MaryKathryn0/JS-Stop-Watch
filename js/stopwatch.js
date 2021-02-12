@@ -57,7 +57,7 @@ function Stopwatch(elem) {
             milliseconds = '0' + milliseconds;
         }
         //return the formatting to match display
-        return minutes + ' : ' + seconds + ' . ' + milliseconds;
+        return minutes + ':' + seconds + '.' + milliseconds;
     }
  
 

@@ -5,7 +5,8 @@ var timer = document.getElementById('timer');
 var toggleBtn = document.getElementById('toggle');
 var resetBtn = document.getElementById('reset');
 //create watch object
-var watch = new Stopwatch();
+//added 'timer' to stopwatch element because wasnt working
+var watch = new Stopwatch(timer);
 
 //add a click listener for toggle button, so that when we click will get function
 toggleBtn.addEventListener('click', function() {

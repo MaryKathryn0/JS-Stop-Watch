@@ -1,7 +1,7 @@
 
 // Constructor Function():is a function we use to create an OBJECT
 // Stopwatch() : this is the function we will be working with
-function Stopwatch() {
+function Stopwatch(elem) {
     
     // Create Private Variables:
     // The time is the current time in milliseconds(will format later)
@@ -19,7 +19,10 @@ function Stopwatch() {
         //whatever is add to delta will be added to the time
         time += delta();
         var formattedTime = timeFormatter(time);
-        
+        //added this last , when added 'elem' to Stopwatchfunction- 
+        //?? still confused on how to know 'elem' in function &
+        // and elem.textContent - ??? not sure how we knew how to do th
+        elem.textContent = formattedTime();
     }
 
     //delta is to calculate how much time has passed

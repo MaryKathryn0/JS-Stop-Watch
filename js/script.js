@@ -14,18 +14,18 @@ function Stopwatch() {
     //Now add private functions
     //Update is what the interval will constantly keep going
     function update() {
-        //
+        //whatever is add to delta will be added to the time
         time += delta();
     }
     //delta is to calculate how much time has passed
     function delta() {
-        //
+        // get date right now
         var now = Date.now;
-        //
+        //get time passed by subtracting now from offset(we get from below this.start function) 
         var timePassed = offset-now;
-        //
+        // added this so that the next time the function is run it starts at correct spot
         offset = now;
-        //
+        // Difference is returned as timePassed variable
         return timePassed;
     }
     //timeFor is to convert from milliseconds

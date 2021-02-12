@@ -33,7 +33,7 @@ function Stopwatch() {
     //timeFor is to convert from milliseconds
     function timeFormatter(timeInMilliseconds) {
         // created date object to pass in that value and add '.toString();' to get length to each
-        time = new Date(time);
+        var time = new Date(timeInMilliseconds);
         var minutes = time.getMinutes().toString();
         var seconds = time.getSeconds().toString();
         var milliseconds = time.getMilliseconds().toString();
@@ -52,8 +52,7 @@ function Stopwatch() {
         //return the formatting to match display
         return minutes + ' : ' + seconds + ' . ' + milliseconds;
     }
-    //Add a value set to false; will be if stopwatch isnt currently running
-    this.isOn= false;
+ 
 
     //first added start function- this functions
     this.start= function() {
@@ -74,7 +73,11 @@ function Stopwatch() {
     };
     this.reset= function() {
         time = 0; 
+        this.isOn = false;
     };
+
+       //Add a value set to false; will be if stopwatch isnt currently running
+       this.isOn= false;
 }
 
 var watch = new Stopwatch();

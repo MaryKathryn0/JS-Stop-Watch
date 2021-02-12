@@ -22,7 +22,7 @@ function Stopwatch(elem) {
         //added this last , when added 'elem' to Stopwatchfunction- 
         //?? still confused on how to know 'elem' in function &
         // and elem.textContent - ??? not sure how we knew how to do th
-        elem.textContent = formattedTime();
+        elem.textContent = formattedTime;
     }
 
     //delta is to calculate how much time has passed

@@ -16,3 +16,8 @@ toggleBtn.addEventListener('click', function() {
         watch.start();
     }
 });
+
+resetBtn.addEventListener('click', function() {
+    //reset stop watch
+    watch.reset();
+});

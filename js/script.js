@@ -39,7 +39,9 @@ function Stopwatch() {
             this.isOn = false;
         }
     };
-    this.reset= function() {};
+    this.reset= function() {
+        time = 0; 
+    };
 }
 // thru new operator using 'new' Keyword- anything that happens to 'this' above
 var watch = new Stopwatch();

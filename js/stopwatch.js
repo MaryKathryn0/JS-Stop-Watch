@@ -57,7 +57,7 @@ function Stopwatch(elem) {
             milliseconds = '0' + milliseconds;
         }
         //return the formatting to match display
-        return minutes + ':' + seconds + '.' + milliseconds;
+        return minutes + ' : ' + seconds + ' . ' + milliseconds;
     }
  
 
@@ -68,7 +68,7 @@ function Stopwatch(elem) {
     //first added start function- this functions
     this.start= function() {
         if (!this.isOn) {
-            interval = setInterval(update, 10);
+            interval = setInterval(update.bind(this), 10);
             offset = Date.now();
             this.isOn = true;
         }
@@ -84,14 +84,13 @@ function Stopwatch(elem) {
     };
     this.reset= function() {
         time = 0; 
-        this.isOn = false;
+        update();
     };
 
-       //Add a value set to false; will be if stopwatch isnt currently running
-       this.isOn= false;
+
 }
 
-var watch = new Stopwatch();
+// var watch = new Stopwatch();
 // thru new operator using 'new' Keyword- anything that happens to 'this' above
 // var watch = new Stopwatch();
 //  watch.start();

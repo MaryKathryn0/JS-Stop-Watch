@@ -16,13 +16,14 @@ function Stopwatch(elem) {
     //Now add private functions
     //Update is what the interval will constantly keep going
     function update() {
+        if (this.isOn) {
         //whatever is add to delta will be added to the time
         time += delta();
-        var formattedTime = timeFormatter(time);
+        }
         //added this last , when added 'elem' to Stopwatchfunction- 
         //?? still confused on how to know 'elem' in function &
         // and elem.textContent - ??? not sure how we knew how to do th
-        elem.textContent = formattedTime;
+        elem.textContent = timeFormatter(time);
     }
 
     //delta is to calculate how much time has passed
@@ -38,9 +39,9 @@ function Stopwatch(elem) {
     }
 
     //timeFor is to convert from milliseconds
-    function timeFormatter(timeInMilliseconds) {
+    function timeFormatter(time) {
         // created date object to pass in that value and add '.toString();' to get length to each
-        var time = new Date(timeInMilliseconds);
+        var time = new Date(time);
         var minutes = time.getMinutes().toString();
         var seconds = time.getSeconds().toString();
         var milliseconds = time.getMilliseconds().toString();
@@ -62,8 +63,7 @@ function Stopwatch(elem) {
  
 
 
-    //Add a value set to false; will be if stopwatch isnt currently running
-    this.isOn= false;
+
 
     //first added start function- this functions
     this.start= function() {
@@ -83,11 +83,13 @@ function Stopwatch(elem) {
         }
     };
     this.reset= function() {
+        if (!this.isOn) {
         time = 0; 
         update();
+        }
     };
-
-
+        //Add a value set to false; will be if stopwatch isnt currently running
+        this.isOn= false;
 }
 
 // var watch = new Stopwatch();

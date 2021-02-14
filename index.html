@@ -1,31 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@300&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spartan:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap"
+      rel="stylesheet"
+    />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <title>Stop Watch</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
+      <div>
+        <!-- added monospace font to keep fonts in one place -->
+        <h1
+          id="timer"
+          style="font-family: 'Major Mono Display', monospace !important"
+        >
+          00:00.000
+        </h1>
         <div>
-            <h1 id="timer">00 : 00 . 000</h1>
-            <div>
-            <button class="buttons" id="toggle">Start</button>
-            <button class="buttons" id="reset">Reset</button>
+          <!-- adding start and stop class to each div -->
+          <button class="buttons toggle start" id="toggle">Start</button>
+          <!-- adding stop button with hide class -->
+          <button class="buttons toggle stop hide">Stop</button>
+          <button class="buttons reset" id="reset">Reset</button>
         </div>
-        </div>
+      </div>
     </div>
+    <ul class="laps list-group py-4"></ul>
     <!-- link stopwatch js -->
-    <script src="js/stopwatch.js"></script>
+    <script src="js/stopwatch-min.js"></script>
     <!-- link main js -->
-    <script src="js/main.js"></script>
-</body>
-
+    <script src="js/main-min.js"></script>
+  </body>
 </html>

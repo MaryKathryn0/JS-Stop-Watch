@@ -1,4 +1,4 @@
-# JavaScript Stopwatch
+# JaveScript Stopwatch
 ![stopwatch](/imgs/Stopwatch-ss.png)
 ## Live Link
 https://marykathryn0.github.io/JS-Stop-Watch/.

@@ -13,10 +13,8 @@ toggleBtn.addEventListener('click', function() {
     //if watch on then stop, else start
     if (watch.isOn) {
         watch.stop();
-        toggleBtn.textContent = 'Start'
     } else {
         watch.start();
-        toggleBtn.textContent = 'Stop'
     }
 });
 

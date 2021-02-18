@@ -16,14 +16,13 @@ function Stopwatch(elem) {
     //Now add private functions
     //Update is what the interval will constantly keep going
     function update() {
-        if (this.isOn) {
         //whatever is add to delta will be added to the time
         time += delta();
-        }
+        var formattedTime = timeFormatter(time);
         //added this last , when added 'elem' to Stopwatchfunction- 
         //?? still confused on how to know 'elem' in function &
         // and elem.textContent - ??? not sure how we knew how to do th
-        elem.textContent = timeFormatter(time);
+        elem.textContent = formattedTime;
     }
 
     //delta is to calculate how much time has passed
@@ -39,9 +38,9 @@ function Stopwatch(elem) {
     }
 
     //timeFor is to convert from milliseconds
-    function timeFormatter(time) {
+    function timeFormatter(timeInMilliseconds) {
         // created date object to pass in that value and add '.toString();' to get length to each
-        var time = new Date(time);
+        var time = new Date(timeInMilliseconds);
         var minutes = time.getMinutes().toString();
         var seconds = time.getSeconds().toString();
         var milliseconds = time.getMilliseconds().toString();
@@ -58,17 +57,18 @@ function Stopwatch(elem) {
             milliseconds = '0' + milliseconds;
         }
         //return the formatting to match display
-        return minutes + ' : ' + seconds + ' . ' + milliseconds;
+        return minutes + ':' + seconds + '.' + milliseconds;
     }
  
 
 
-
+    //Add a value set to false; will be if stopwatch isnt currently running
+    this.isOn= false;
 
     //first added start function- this functions
     this.start= function() {
         if (!this.isOn) {
-            interval = setInterval(update.bind(this), 10);
+            interval = setInterval(update, 10);
             offset = Date.now();
             this.isOn = true;
         }
@@ -83,16 +83,15 @@ function Stopwatch(elem) {
         }
     };
     this.reset= function() {
-        if (!this.isOn) {
         time = 0; 
-        update();
-        }
+        this.isOn = false;
     };
-        //Add a value set to false; will be if stopwatch isnt currently running
-        this.isOn= false;
+
+       //Add a value set to false; will be if stopwatch isnt currently running
+       this.isOn= false;
 }
 
-// var watch = new Stopwatch();
+var watch = new Stopwatch();
 // thru new operator using 'new' Keyword- anything that happens to 'this' above
 // var watch = new Stopwatch();
 //  watch.start();
